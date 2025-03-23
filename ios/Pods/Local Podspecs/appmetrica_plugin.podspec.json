@@ -1,0 +1,40 @@
+{
+  "name": "appmetrica_plugin",
+  "version": "1.4.0",
+  "summary": "AppMetrica SDK for Flutter",
+  "homepage": "https://appmetrica.yandex.com/",
+  "license": {
+    "type": "PROPRIETARY",
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Yandex LLC": "appmetrica@yandex-team.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": [
+    "Classes/**/*",
+    "AppMetricaPlugin/*.{h,m}"
+  ],
+  "public_header_files": [
+    "Classes/**/*.h",
+    "AppMetricaPlugin/*.h"
+  ],
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "YandexMobileMetrica": [
+      "~> 4.4"
+    ]
+  },
+  "static_framework": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
+  }
+}

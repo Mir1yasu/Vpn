@@ -1,0 +1,51 @@
+buildscript {
+    ext.kotlin_version = '1.9.10'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.13'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://artifactory.appodeal.com/appodeal"
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'android.arch.lifecycle:runtime'
+                    && !details.requested.name.contains('multidex')) {
+                details.useVersion "1.1.1"
+            }
+        }
+
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support:support-media-compat'
+                    && !details.requested.name.contains('multidex')) {
+                details.useVersion "27.0.0"
+            }
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

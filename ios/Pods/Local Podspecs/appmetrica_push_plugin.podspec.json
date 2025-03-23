@@ -1,0 +1,43 @@
+{
+  "name": "appmetrica_push_plugin",
+  "version": "0.3.0",
+  "summary": "AppMetrica Push SDK for Flutter",
+  "homepage": "https://appmetrica.yandex.com",
+  "license": {
+    "type": "PROPRIETARY",
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Yandex LLC": "appmetrica@yandex-team.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": [
+    "Classes/**/*",
+    "AppMetricaPushPlugin/*.{h,m}"
+  ],
+  "public_header_files": [
+    "Classes/**/*.h",
+    "AppMetricaPushPlugin/*.h"
+  ],
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "appmetrica_plugin": [
+
+    ],
+    "YandexMobileMetricaPush": [
+      "~> 1.3"
+    ]
+  },
+  "static_framework": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
+  }
+}

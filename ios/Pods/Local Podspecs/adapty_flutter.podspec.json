@@ -1,0 +1,38 @@
+{
+  "name": "adapty_flutter",
+  "version": "2.9.0",
+  "summary": "Adapty flutter plugin.",
+  "description": "A new flutter plugin project.",
+  "homepage": "https://adapty.io/",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Adapty": "contact@adapty.io"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "Flutter": [
+
+    ]
+  },
+  "ios": {
+    "dependencies": {
+      "Adapty": [
+        "2.9.1"
+      ]
+    }
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "VALID_ARCHS[sdk=iphonesimulator*]": "x86_64"
+  },
+  "swift_versions": "5.3",
+  "swift_version": "5.3"
+}
